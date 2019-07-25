@@ -15,9 +15,7 @@ def add(
     :return int: the sum will be an integer
     """
 
-    total = x + y
-
-    return total
+    return x + y
 
 
 def subtract(
@@ -32,9 +30,7 @@ def subtract(
     :return int: the difference will be an integer
     """
 
-    difference = x - y
-
-    return difference
+    return x - y
 
 
 def divide(
@@ -49,17 +45,11 @@ def divide(
     :return int: the quotient will be an int with a remainder
     """
 
-    quotient = x / y
-
     if y == 0:
-        print('undefined')
+        TypeError('Cannot Divide by 0')
+    else:
 
-    return quotient
-
-    remainder = x % y
-    print(quotient + " r" + remainder + " is the quotient")
-
-    return quotient
+    return (x / y, x % y)
 
 
 def multiply(
@@ -74,11 +64,7 @@ def multiply(
     :return int: the quotient will be an int with a remainder
     """
 
-    product = x * y
-
-    print(product + " is the product")
-
-    return product
+    return x * y
 
 
 def main():
@@ -96,28 +82,29 @@ def main():
     )
 
     if operator_input == '+':
-        print(add(
+        result = add(
             input_x,
             input_y,
-        ))
+        )
     elif operator_input == '-':
-        print(subtract(
+        result = subtract(
             input_x,
             input_y,
-        ))
+        )
     elif operator_input == '/':
-        print(divide(
+        result = divide(
             input_x,
             input_y,
-        ))
+        )
     elif operator_input == '*':
-        print(multiply(
+        result = multiply(
             input_x,
             input_y
-        ))
+        )
     else:
         print('enter a valid operator')
 
+    print(result)
 
 if __name__ == '__main__':
     main()
