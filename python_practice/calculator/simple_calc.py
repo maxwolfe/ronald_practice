@@ -46,10 +46,13 @@ def divide(
     """
 
     if y == 0:
-        TypeError('Cannot Divide by 0')
+        raise TypeError('Cannot Divide by 0')
     else:
 
-    return (x / y, x % y)
+        return (
+            x / y,
+            x % y
+        )
 
 
 def multiply(
@@ -102,9 +105,10 @@ def main():
             input_y
         )
     else:
-        print('enter a valid operator')
+        result = 'you did not enter a valid operator'
 
     print(result)
+
 
 if __name__ == '__main__':
     main()
