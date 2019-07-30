@@ -31,13 +31,13 @@ def main():
             'Breadth First Search:\n',
             SearchSimulator(
                 BFS,
-            ),
+            ).order(),
     )
     print(
             'Depth First Search:\n',
             SearchSimulator(
                 DFS,
-            ),
+            ).order(),
     )
 
 
