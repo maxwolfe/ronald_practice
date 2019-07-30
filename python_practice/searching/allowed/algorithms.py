@@ -15,7 +15,7 @@ class Searcher:
     '''
     A template for implementing searching algorithms
     '''
-    
+
     def __init__(
             self,
             start,
@@ -43,7 +43,7 @@ class Searcher:
         self.ordering.append(
                 self.start,
         )
-        
+
         return self
 
     def __next__(

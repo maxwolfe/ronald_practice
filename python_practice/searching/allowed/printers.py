@@ -2,8 +2,6 @@
 Custom output methods
 '''
 
-import random
-
 from allowed.algorithms import (
         Searcher,
 )
@@ -81,6 +79,16 @@ class SearchSimulator:
         :param start: the optional starting point for that search
         '''
 
+        if not isinstance(
+                strategy,
+                Searcher,
+        ):
+            raise TypeError(
+                    'Searching algorithm not a valid algorithm',
+            )
+
+        self.strategy = strategy
+
         if start and not isinstance(
                 start,
                 TreeNode,
@@ -92,7 +100,6 @@ class SearchSimulator:
             start = sample
 
         self.start = start
-        self.strategy = strategy
 
     def order(
             self,

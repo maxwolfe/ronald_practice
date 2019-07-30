@@ -28,7 +28,7 @@ class Node:
         if type and not isinstance(
                 value,
                 type,
-        ): 
+        ):
             raise TypeError(
                     '{value} is not of type {type}'.format(
                         value=value,
@@ -68,7 +68,7 @@ class TreeNode(Node):
                 value,
                 type,
         )
-        
+
         if not children:
             children = deque()
 
@@ -89,7 +89,7 @@ class TreeNode(Node):
                     children,
                 ),
         ):
-            raise TypeError (
+            raise TypeError(
                     'All children of a Tree Node must also be Tree Nodes',
             )
 
@@ -97,7 +97,6 @@ class TreeNode(Node):
         self.children.extend(
                 children,
         )
-
 
     def __repr__(
             self,
@@ -128,7 +127,7 @@ class BinaryTreeNode(TreeNode):
                 children,
                 type,
         )
-        
+
         while len(
                 self.children,
         ) < 2:

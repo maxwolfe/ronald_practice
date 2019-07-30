@@ -2,10 +2,6 @@
 Common Searching Algorithms for Trees and Graphs
 '''
 
-from collections import (
-        deque,
-)
-
 from allowed.algorithms import (
         Searcher,
 )
@@ -42,19 +38,19 @@ class DFS(Searcher):
 
 
 def main():
-    print (
+    print(
             'Breadth First Search:\n',
             SearchSimulator(
                 BFS,
             ),
     )
-    print (
+    print(
             'Depth First Search:\n',
             SearchSimulator(
                 DFS,
             ),
     )
 
-    
+
 if __name__ == '__main__':
     main()
