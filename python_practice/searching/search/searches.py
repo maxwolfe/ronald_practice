@@ -15,18 +15,7 @@ class BFS(Searcher):
     Implement Breadth First Search
     '''
 
-    def __next__(
-            self,
-    ):
-        if len(
-                self.ordering,
-        ):
-            cur = self.ordering.popleft()
-            self.ordering.extend(
-                    cur.children,
-            )
-
-            return cur
+    pass
 
 
 class DFS(Searcher):
