@@ -92,6 +92,7 @@ class SearchSimulator:
             start = sample
 
         self.start = start
+        self.strategy = strategy
 
     def order(
             self,

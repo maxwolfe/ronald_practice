@@ -2,6 +2,10 @@
 Base Classes for Types of Algorithms
 '''
 
+from collections import (
+        deque,
+)
+
 from allowed.nodes import (
     TreeNode,
 )
@@ -35,7 +39,10 @@ class Searcher:
     def __iter__(
             self,
     ):
-        self.cur = self.start
+        self.ordering = deque()
+        self.ordering.append(
+                self.start,
+        )
         
         return self
 
