@@ -79,16 +79,6 @@ class SearchSimulator:
         :param start: the optional starting point for that search
         '''
 
-        if not isinstance(
-                strategy,
-                Searcher,
-        ):
-            raise TypeError(
-                    'Searching algorithm not a valid algorithm',
-            )
-
-        self.strategy = strategy
-
         if start and not isinstance(
                 start,
                 TreeNode,
@@ -100,6 +90,18 @@ class SearchSimulator:
             start = sample
 
         self.start = start
+
+        if not isinstance(
+                strategy(
+                    start,
+                ),
+                Searcher,
+        ):
+            raise TypeError(
+                    'Searching algorithm not a valid algorithm',
+            )
+
+        self.strategy = strategy
 
     def order(
             self,
