@@ -14,11 +14,17 @@ class BFS(Searcher):
     '''
     Implement Breadth First Search
     '''
-    def __next__(self):
-        if (not self.ordering):
+
+    def __next__(
+            self,
+    ):
+        if not self.ordering:
             raise StopIteration("The queue is empty")
+
         cur = self.ordering.popleft()
-        self.ordering.extend(cur.children)
+        self.ordering.extend(
+                        cur.children
+        )
 
         return cur
 
@@ -27,12 +33,18 @@ class DFS(Searcher):
     '''
     Implement Depth First Search
     '''
-    def __next__(self):
-        if (not self.ordering):
+
+    def __next__(
+            self
+    ):
+
+        if not self.ordering:
             raise StopIteration("The stack is empty")
 
         cur = self.ordering.popleft()
-        self.ordering.extendleft(reversed(cur.children))
+        self.ordering.extendleft(
+                        reversed(cur.children)
+        )
 
         return cur
 
