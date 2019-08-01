@@ -14,16 +14,27 @@ class BFS(Searcher):
     '''
     Implement Breadth First Search
     '''
+    def __next__(self):
+        if (not self.ordering):
+            raise StopIteration("The queue is empty")
+        cur = self.ordering.popleft()
+        self.ordering.extend(cur.children)
 
-    pass
+        return cur
 
 
 class DFS(Searcher):
     '''
     Implement Depth First Search
     '''
+    def __next__(self):
+        if (not self.ordering):
+            raise StopIteration("The stack is empty")
 
-    pass
+        cur = self.ordering.popleft()
+        self.ordering.extendleft(reversed(cur.children))
+
+        return cur
 
 
 def main():
@@ -33,6 +44,7 @@ def main():
                 BFS,
             ).order(),
     )
+
     print(
             'Depth First Search:\n',
             SearchSimulator(
