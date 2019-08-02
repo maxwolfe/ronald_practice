@@ -23,7 +23,7 @@ class BFS(Searcher):
 
         cur = self.ordering.popleft()
         self.ordering.extend(
-                        cur.children
+                        cur.children,
         )
 
         return cur
@@ -35,7 +35,7 @@ class DFS(Searcher):
     '''
 
     def __next__(
-            self
+            self,
     ):
 
         if not self.ordering:
@@ -43,7 +43,7 @@ class DFS(Searcher):
 
         cur = self.ordering.popleft()
         self.ordering.extendleft(
-                        reversed(cur.children)
+                        reversed(cur.children),
         )
 
         return cur
