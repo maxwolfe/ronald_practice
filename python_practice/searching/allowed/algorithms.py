@@ -19,6 +19,7 @@ class Searcher:
     def __init__(
             self,
             start,
+            node_type=TreeNode,
     ):
         '''
         Initialize a searching algorithm with a starting node
@@ -28,7 +29,7 @@ class Searcher:
 
         if not isinstance(
                 start,
-                TreeNode,
+                node_type,
         ):
             raise TypeError(
                     'Starting point must be a valid Node object',
@@ -39,9 +40,10 @@ class Searcher:
     def __iter__(
             self,
     ):
-        self.ordering = deque()
-        self.ordering.append(
-                self.start,
+        self.ordering = deque(
+                [
+                    self.start,
+                ],
         )
 
         return self

@@ -6,54 +6,55 @@ from allowed.algorithms import (
         Searcher,
 )
 from allowed.nodes import (
+        BinaryTreeNode,
         TreeNode,
 )
 
 
-sample = TreeNode(
+sample = BinaryTreeNode(
         5,
         [
-            TreeNode(
+            BinaryTreeNode(
                 6,
                 [
-                    TreeNode(
+                    BinaryTreeNode(
                         7,
                     ),
                 ],
             ),
-            TreeNode(
+            BinaryTreeNode(
                 8,
                 [
-                    TreeNode(
+                    BinaryTreeNode(
                         9,
                         [
-                            TreeNode(
+                            BinaryTreeNode(
                                 10,
                                 [
-                                    TreeNode(
+                                    BinaryTreeNode(
                                         11,
                                         [
-                                            TreeNode(
+                                            BinaryTreeNode(
                                                 12,
                                                 [
-                                                    TreeNode(
+                                                    BinaryTreeNode(
                                                         13,
                                                     ),
-                                                    TreeNode(
+                                                    BinaryTreeNode(
                                                         14,
                                                     ),
                                                 ],
                                             ),
                                         ],
                                     ),
-                                    TreeNode(
+                                    BinaryTreeNode(
                                         15,
                                     ),
                                 ],
                             ),
                         ],
                     ),
-                    TreeNode(
+                    BinaryTreeNode(
                         16,
                     ),
                 ],
